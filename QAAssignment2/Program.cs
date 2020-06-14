@@ -16,7 +16,17 @@ namespace QAAssignment2
         {
             OptionBook();
             int userInput;
-            userInput = int.Parse(Console.ReadLine());
+
+            try
+            {
+                userInput = int.Parse(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Reason : {0}\nEnter valid Number ", e.Message);
+                return;
+            }
+
             switch (userInput)
             {
                 case 1:
@@ -25,17 +35,26 @@ namespace QAAssignment2
                     int h;
                     do
                     {
-                        Console.WriteLine("-------------------------------------");
-                        Console.WriteLine("l = ");
-                        l = int.Parse(Console.ReadLine());
-                        Console.WriteLine("b = ");
-                        b = int.Parse(Console.ReadLine());
-                        Console.WriteLine("h = ");
-                        h = int.Parse(Console.ReadLine());
-                        Console.WriteLine("-------------------------------------");
+                        try
+                        {
+                            Console.WriteLine("-------------------------------------");
+                            Console.WriteLine("l = ");
+                            l = int.Parse(Console.ReadLine());
+                            Console.WriteLine("b = ");
+                            b = int.Parse(Console.ReadLine());
+                            Console.WriteLine("h = ");
+                            h = int.Parse(Console.ReadLine());
+                            Console.WriteLine("-------------------------------------");
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Reason : {0}\nTry Again :(", e.Message);
+                            return;
+                        }
+                        
                         if (l == 0 || b == 0 || h == 0 || l < 0 || b < 0 || h < 0)
                         {
-                            Console.WriteLine("Enter valid number");
+                            Console.WriteLine("Invalid number.");
                         }
                         else
                         {
@@ -52,7 +71,7 @@ namespace QAAssignment2
                     break;
 
                 default:
-                    Console.WriteLine("Please Enter Appropriate Input!!!...");
+                    Console.WriteLine("Enter valid number");
                     break;
 
             } while (true) ;

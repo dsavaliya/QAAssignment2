@@ -41,24 +41,24 @@ namespace QAAssignment2
         {
             if (l + b <= h || l + h <= b || b + h <= l)
             {
-                string statement = "Sorry, This number do not form triangle";
+                string statement = "Sorry, This number do not form triangle.";
                 return statement;
             }
             else
             {
                 if (scaleneTriangle(l, b, h))
                 {
-                    string statement = "This number can form triangle\nThis Is Scalene Triangle";
+                    string statement = "This number can form triangle.\nThis Is Scalene Triangle.";
                     return statement;
                 }
                 else if (isoscelesTriangle(l, b, h))
                 {
-                    string statement = "This number can form triangle\nThis Is Isosceles Triangle";
+                    string statement = "This number can form triangle.\nThis Is Isosceles Triangle.";
                     return statement;
                 }
                 else if (equilateralTriangle(l, b, h))
                 {
-                    string statement = "This number can form triangle\nThis Is Equilateral Triangle";
+                    string statement = "This number can form triangle.\nThis Is Equilateral Triangle.";
                     return statement;
                 }
             }
