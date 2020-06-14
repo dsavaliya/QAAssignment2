@@ -48,15 +48,18 @@ namespace QAAssignment2
             {
                 if (scaleneTriangle(l, b, h))
                 {
-                    return "This Is Scalene Triangle";
+                    string statement = "This number can form triangle\nThis Is Scalene Triangle";
+                    return statement;
                 }
                 else if (isoscelesTriangle(l, b, h))
                 {
-                    return "This Is Isosceles Triangle";
+                    string statement = "This number can form triangle\nThis Is Isosceles Triangle";
+                    return statement;
                 }
                 else if (equilateralTriangle(l, b, h))
                 {
-                    return "This Is Equilateral Triangle";
+                    string statement = "This number can form triangle\nThis Is Equilateral Triangle";
+                    return statement;
                 }
             }
             return null;
