@@ -39,39 +39,31 @@ namespace QAAssignment2
                         int l;
                         int b;
                         int h;
-                        do
+                        //do
+                        //{
+                            
+                        //} while (true);
+                        try
                         {
-                            try
-                            {
-                                Console.WriteLine("-------------------------------------");
-                                Console.WriteLine("l = ");
-                                l = int.Parse(Console.ReadLine());
-                                Console.WriteLine("b = ");
-                                b = int.Parse(Console.ReadLine());
-                                Console.WriteLine("h = ");
-                                h = int.Parse(Console.ReadLine());
-                                Console.WriteLine("-------------------------------------");
-                                break;
-                            }
-                            catch (Exception e)
-                            {
-                                Console.WriteLine("Reason : {0}\nTry Again :(", e.Message);
-                                result = true;
-                            }
-                        } while (true);
-                        
-
-                        if (l == 0 || b == 0 || h == 0 || l < 0 || b < 0 || h < 0)
-                        {
-                            Console.WriteLine("Invalid number.");
-                        }
-                        else
-                        {
+                            Console.WriteLine("-------------------------------------");
+                            Console.WriteLine("l = ");
+                            l = int.Parse(Console.ReadLine());
+                            Console.WriteLine("b = ");
+                            b = int.Parse(Console.ReadLine());
+                            Console.WriteLine("h = ");
+                            h = int.Parse(Console.ReadLine());
+                            Console.WriteLine("-------------------------------------");
                             String output = TriangleSolver.Analyze(l, b, h);
                             Console.WriteLine(output);
                             result = true;
                             break;
                         }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Reason : {0}\nTry Again :(", e.Message);
+                            result = true;
+                        }
+
                         break;
 
                     case 2:
