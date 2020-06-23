@@ -14,44 +14,53 @@ namespace QAAssignment2
         }
         static void Main(string[] args)
         {
-            OptionBook();
+            bool result = true;
             int userInput;
-
-            try
+            do
             {
-                userInput = int.Parse(Console.ReadLine());
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Reason : {0}\nEnter valid Number ", e.Message);
-                return;
-            }
-
-            switch (userInput)
-            {
-                case 1:
-                    int l;
-                    int b;
-                    int h;
-                    do
+                do
+                {
+                    OptionBook();
+                    try
                     {
-                        try
+                        userInput = int.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Reason : {0}\nEnter valid Number ", e.Message);
+                        result = true;
+                    }
+                } while (true);
+
+                switch (userInput)
+                {
+                    case 1:
+                        int l;
+                        int b;
+                        int h;
+                        do
                         {
-                            Console.WriteLine("-------------------------------------");
-                            Console.WriteLine("l = ");
-                            l = int.Parse(Console.ReadLine());
-                            Console.WriteLine("b = ");
-                            b = int.Parse(Console.ReadLine());
-                            Console.WriteLine("h = ");
-                            h = int.Parse(Console.ReadLine());
-                            Console.WriteLine("-------------------------------------");
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine("Reason : {0}\nTry Again :(", e.Message);
-                            return;
-                        }
+                            try
+                            {
+                                Console.WriteLine("-------------------------------------");
+                                Console.WriteLine("l = ");
+                                l = int.Parse(Console.ReadLine());
+                                Console.WriteLine("b = ");
+                                b = int.Parse(Console.ReadLine());
+                                Console.WriteLine("h = ");
+                                h = int.Parse(Console.ReadLine());
+                                Console.WriteLine("-------------------------------------");
+                                break;
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine("Reason : {0}\nTry Again :(", e.Message);
+                                result = true;
+                            }
+                        } while (true);
                         
+
                         if (l == 0 || b == 0 || h == 0 || l < 0 || b < 0 || h < 0)
                         {
                             Console.WriteLine("Invalid number.");
@@ -60,21 +69,25 @@ namespace QAAssignment2
                         {
                             String output = TriangleSolver.Analyze(l, b, h);
                             Console.WriteLine(output);
+                            result = true;
                             break;
                         }
-                    } while (true);
-                    break;
+                        break;
 
-                case 2:
+                    case 2:
 
-                    Environment.Exit(0);
-                    break;
+                        Environment.Exit(0);
+                        result = false;
+                        break;
 
-                default:
-                    Console.WriteLine("Enter valid number");
-                    break;
+                    default:
+                        Console.WriteLine("Enter valid number");
+                        result = true;
+                        break;
 
-            } while (true) ;
+                } 
+
+            } while (result == true);
         }
     }
 }
